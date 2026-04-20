@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caroline Tshishonge Oluga | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --primary: 234 179 8;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+        }
+        
+        .nav-link {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: rgb(234 179 8);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .section-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(to right, rgb(234 179 8), #eab308);
+            bottom: -6px;
+            left: 0;
+        }
+        
+        .project-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .project-card:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px -12px rgb(234 179 8 / 0.25);
+        }
+        
+        .skill-bar {
+            height: 8px;
+            background: linear-gradient(to right, rgb(234 179 8), #facc15);
+            transition: width 1.5s ease-in-out;
+        }
+        
+        .hero-text {
+            animation: fadeInUp 1s ease forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-zinc-950 text-white font-['Inter'] overflow-x-hidden">
+    <!-- NAVBAR -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-zinc-950/80 backdrop-blur-lg border-b border-zinc-800">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-yellow-400 rounded-2xl flex items-center justify-center text-zinc-950 font-bold text-2xl shadow-inner">C</div>
+                <div>
+                    <span class="font-semibold text-2xl tracking-tighter text-white">Caroline</span>
+                </div>
+            </div>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex items-center gap-10 text-sm font-medium">
+                <a href="#home" class="nav-link text-white hover:text-yellow-400">Home</a>
+                <a href="#about" class="nav-link text-white hover:text-yellow-400">About</a>
+                <a href="#education" class="nav-link text-white hover:text-yellow-400">Education</a>
+                <a href="#skills" class="nav-link text-white hover:text-yellow-400">Skills</a>
+                <a href="#projects" class="nav-link text-white hover:text-yellow-400">Projects</a>
+                <a href="#contact" class="nav-link text-white hover:text-yellow-400">Contact</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="mailto:carolineolga9@gmail.com" 
+                   class="hidden sm:flex items-center gap-2 px-6 py-3 bg-white text-zinc-950 rounded-2xl font-semibold text-sm hover:bg-yellow-400 transition-all">
+                    <i class="fa-solid fa-paper-plane"></i>
+                    <span>Email Me</span>
+                </a>
+                
+                <!-- Mobile Hamburger -->
+                <button id="mobile-menu-btn"
+                        class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden fixed inset-0 bg-zinc-950 z-40 pt-20 px-6">
+            <div class="flex flex-col gap-6 text-xl font-medium">
+                <a href="#home" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Home</a>
+                <a href="#about" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">About</a>
+                <a href="#education" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Education</a>
+                <a href="#skills" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Skills</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Projects</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="py-3 border-b border-zinc-800">Contact</a>
+                
+                <div class="mt-8">
+                    <a href="mailto:carolineolga9@gmail.com" 
+                       class="block w-full text-center py-5 bg-yellow-400 text-zinc-950 rounded-3xl font-bold text-lg">
+                        Get In Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="hero-bg min-h-screen flex items-center pt-16">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="hero-text space-y-6">
+                <div class="inline-flex items-center gap-3 bg-zinc-900 border border-yellow-400/30 px-6 py-3 rounded-3xl text-sm">
+                    <div class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                    <span class="font-medium text-yellow-400">2nd Year Computer Science Student</span>
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-bold leading-none tracking-tighter">
+                    Hi, I'm <span class="text-yellow-400">Caroline</span><br>
+                    Tshishonge Oluga
+                </h1>
+                
+                <p class="text-2xl text-zinc-400 max-w-lg">
+                    Passionate about <span class="text-yellow-400 font-semibold">Cybersecurity</span>, 
+                    <span class="text-yellow-400 font-semibold">Machine Learning</span>, and 
+                    <span class="text-yellow-400 font-semibold">Artificial Intelligence</span>
+                </p>
+                
+                <div class="flex items-center gap-5 pt-4">
+                    <a href="#projects" 
+                       class="px-10 py-4 bg-yellow-400 hover:bg-amber-400 transition-all text-zinc-950 font-semibold rounded-3xl flex items-center gap-3 text-lg shadow-xl shadow-yellow-400/30">
+                        View My Projects
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                    
+                    <a href="#contact" 
+                       class="px-8 py-4 border border-white/60 hover:border-yellow-400 rounded-3xl font-medium flex items-center gap-2 transition-all">
+                        <i class="fa-solid fa-envelope"></i>
+                        Let's Talk
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-8 pt-8">
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-zinc-500">Age</p>
+                        <p class="text-4xl font-semibold text-yellow-400">20</p>
+                    </div>
+                    <div>
+                        <p class="text-xs uppercase tracking-widest text-zinc-500">University</p>
+                        <p class="text-2xl font-semibold">University of Venda</p>
+                    </div>
+                    <div class="h-12 w-px bg-zinc-700"></div>
+                    <div class="flex gap-6">
+                        <a href="https://wa.me/27774413854" target="_blank" 
+                           class="text-3xl hover:text-yellow-400 transition-colors">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="mailto:carolineolga9@gmail.com" 
+                           class="text-3xl hover:text-yellow-400 transition-colors">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Hero Image -->
+            <div class="relative flex justify-center md:justify-end">
+                <div class="relative">
+                    <!-- Profile Image -->
+                    <div class="w-80 h-80 md:w-96 md:h-96 bg-gradient-to-br from-yellow-400 to-amber-500 rounded-[4rem] p-3 shadow-2xl shadow-yellow-400/40">
+                        <img src="images/oluga 2.jpeg" 
+                             alt="Caroline Tshishonge Oluga"
+                             class="w-full h-full object-cover rounded-[3rem]">
+                    </div>
+                    
+                    <!-- Floating badges -->
+                    <div class="absolute -top-6 -left-6 bg-zinc-900 border border-yellow-400/30 px-6 py-4 rounded-3xl shadow-xl">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-shield-halved text-4xl text-cyan-400"></i>
+                            <div>
+                                <p class="font-bold text-lg">Cybersecurity</p>
+                                <p class="text-xs text-zinc-400">Enthusiast</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="absolute -bottom-6 -right-6 bg-zinc-900 border border-yellow-400/30 px-6 py-4 rounded-3xl shadow-xl">
+                        <div class="flex items-center gap-3">
+                            <i class="fa-solid fa-brain text-4xl text-purple-400"></i>
+                            <div>
+                                <p class="font-bold text-lg">AI + ML</p>
+                                <p class="text-xs text-zinc-400">Future Builder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 flex flex-col items-center gap-2">
+            <p class="text-xs tracking-widest text-zinc-400">SCROLL TO EXPLORE</p>
+            <div class="w-px h-12 bg-gradient-to-b from-transparent via-yellow-400 to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-24 bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-12 gap-16 items-center">
+                <div class="md:col-span-5">
+                    <div class="sticky top-28">
+                        <span class="px-5 py-2 bg-yellow-400/10 text-yellow-400 text-sm font-semibold rounded-3xl">WHO AM I?</span>
+                        <h2 class="section-title text-5xl font-bold tracking-tighter mt-6">About Caroline</h2>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-7 text-lg leading-relaxed text-zinc-300">
+                    <p class="mb-6">
+                        I'm a 20-year-old second-year Computer Science student at the University of Venda (Thohoyandou, Limpopo). 
+                        My journey in technology started with a simple curiosity about how things work behind the screen — 
+                        and it quickly turned into a deep passion for protecting digital spaces, building intelligent systems, 
+                        and shaping the future with AI.
+                    </p>
+                    <p>
+                        When I'm not coding or learning about the latest vulnerabilities in cybersecurity, you'll find me exploring 
+                        new machine learning techniques, experimenting with neural networks, or discussing the ethical implications 
+                        of artificial intelligence. I believe technology should be secure, intelligent, and accessible to everyone.
+                    </p>
+                    
+                    <div class="mt-12 flex flex-wrap gap-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-yellow-400/10 flex items-center justify-center text-3xl">🇿🇦</div>
+                            <div>
+                                <p class="font-medium">Based in</p>
+                                <p class="text-yellow-400">Limpopo, South Africa</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-yellow-400/10 flex items-center justify-center text-3xl">📚</div>
+                            <div>
+                                <p class="font-medium">Currently studying</p>
+                                <p class="text-yellow-400">BSc Computer Science</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-yellow-400 text-sm font-semibold tracking-widest">ACADEMIC JOURNEY</span>
+                <h2 class="section-title text-5xl font-bold tracking-tighter mt-3">Education</h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto">
+                <div class="bg-zinc-900 border border-zinc-800 rounded-3xl p-10">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-48 flex-shrink-0">
+                            <div class="bg-gradient-to-br from-yellow-400 to-amber-500 text-zinc-950 text-center py-6 rounded-3xl">
+                                <p class="text-5xl font-bold">2024</p>
+                                <p class="text-sm -mt-1">Present</p>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex items-center gap-4 mb-6">
+                                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+                                <span class="text-yellow-400 font-semibold">UNIVERSITY OF VENDA</span>
+                                <div class="h-px flex-1 bg-gradient-to-r from-transparent via-yellow-400 to-transparent"></div>
+                            </div>
+                            
+                            <h3 class="text-3xl font-semibold">Bachelor of Science in Computer Science</h3>
+                            <p class="text-yellow-400 mt-1">2nd Year • Thohoyandou, Limpopo</p>
+                            
+                            <ul class="mt-8 space-y-4 text-zinc-400">
+                                <li class="flex gap-3">
+                                    <span class="text-yellow-400 mt-1">•</span>
+                                    Current GPA: Maintaining strong academic performance
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-yellow-400 mt-1">•</span>
+                                    Relevant coursework: Data Structures, Programming, Database Systems, Networks
+                                </li>
+                                <li class="flex gap-3">
+                                    <span class="text-yellow-400 mt-1">•</span>
+                                    Focus areas: Cybersecurity fundamentals, Machine Learning introduction, AI concepts
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills" class="py-24 bg-zinc-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="text-center mb-16">
+                <span class="text-yellow-400 text-sm font-semibold tracking-widest">WHAT I BRING</span>
+                <h2 class="section-title text-5xl font-bold tracking-tighter mt-3">Skills &amp; Interests</h2>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Cybersecurity -->
+                <div class="bg-zinc-800 p-8 rounded-3xl">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <i class="fa-solid fa-shield-halved text-5xl text-cyan-400"></i>
+                        </div>
+                        <span class="text-xs uppercase font-mono bg-cyan-400/10 text-cyan-400 px-4 py-2 rounded-3xl">Level 2</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-6">Cybersecurity</h3>
+                    <div class="space-y-7">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Network Security</span>
+                                <span class="text-yellow-400">85%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Ethical Hacking Basics</span>
+                                <span class="text-yellow-400">70%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[70%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Encryption &amp; Cryptography</span>
+                                <span class="text-yellow-400">90%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[90%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Machine Learning -->
+                <div class="bg-zinc-800 p-8 rounded-3xl">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <i class="fa-solid fa-chart-line text-5xl text-purple-400"></i>
+                        </div>
+                        <span class="text-xs uppercase font-mono bg-purple-400/10 text-purple-400 px-4 py-2 rounded-3xl">Level 1</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-6">Machine Learning</h3>
+                    <div class="space-y-7">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Python + Scikit-learn</span>
+                                <span class="text-yellow-400">75%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[75%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Supervised Learning</span>
+                                <span class="text-yellow-400">65%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[65%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Data Visualization</span>
+                                <span class="text-yellow-400">80%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[80%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Artificial Intelligence -->
+                <div class="bg-zinc-800 p-8 rounded-3xl">
+                    <div class="flex justify-between items-start mb-8">
+                        <div>
+                            <i class="fa-solid fa-brain text-5xl text-pink-400"></i>
+                        </div>
+                        <span class="text-xs uppercase font-mono bg-pink-400/10 text-pink-400 px-4 py-2 rounded-3xl">Level 1</span>
+                    </div>
+                    <h3 class="text-2xl font-semibold mb-6">Artificial Intelligence</h3>
+                    <div class="space-y-7">
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Neural Networks Basics</span>
+                                <span class="text-yellow-400">60%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[60%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Prompt Engineering</span>
+                                <span class="text-yellow-400">95%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[95%]"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex justify-between text-sm mb-2">
+                                <span>Ethics in AI</span>
+                                <span class="text-yellow-400">85%</span>
+                            </div>
+                            <div class="h-2 bg-zinc-700 rounded-full overflow-hidden">
+                                <div class="skill-bar w-[85%]"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-16 text-center text-sm text-zinc-400">
+                <p>Also proficient in: HTML • CSS • JavaScript • Python • Git • Linux basics</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects" class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="text-yellow-400 text-sm font-semibold tracking-widest">PORTFOLIO</span>
+                    <h2 class="section-title text-5xl font-bold tracking-tighter">Featured Projects</h2>
+                </div>
+                <a href="#" onclick="alert('🚀 More projects coming soon! Follow my GitHub in future updates.')"
+                   class="hidden md:flex items-center gap-2 text-sm font-medium text-yellow-400 hover:text-white">
+                    VIEW ALL 
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Project 1 -->
+                <div class="project-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group">
+                    <div class="h-60 bg-gradient-to-br from-cyan-500/20 to-zinc-800 flex items-center justify-center">
+                        <i class="fa-solid fa-lock text-7xl text-cyan-400 group-hover:rotate-12 transition-transform"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] px-3 py-1 bg-cyan-400/10 text-cyan-400 rounded-full">Cybersecurity</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">SecureVault - File Encryption Tool</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed line-clamp-3">
+                            A web-based AES encryption/decryption application with user authentication. Built to demonstrate symmetric key cryptography.
+                        </p>
+                        <div class="mt-8 flex items-center justify-between text-xs">
+                            <span class="font-mono text-yellow-400">HTML • CSS • JS • CryptoJS</span>
+                            <button onclick="window.open('https://github.com', '_blank')" 
+                                    class="flex items-center gap-2 hover:text-yellow-400">
+                                View <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="project-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group">
+                    <div class="h-60 bg-gradient-to-br from-purple-500/20 to-zinc-800 flex items-center justify-center">
+                        <i class="fa-solid fa-brain text-7xl text-purple-400 group-hover:scale-110 transition-transform"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] px-3 py-1 bg-purple-400/10 text-purple-400 rounded-full">Machine Learning</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">IrisGuard - Threat Detection Model</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed line-clamp-3">
+                            Simple ML classification model trained to detect phishing attempts using Scikit-learn. Includes interactive demo with sample datasets.
+                        </p>
+                        <div class="mt-8 flex items-center justify-between text-xs">
+                            <span class="font-mono text-yellow-400">Python • Scikit-learn • Streamlit</span>
+                            <button onclick="window.open('https://github.com', '_blank')" 
+                                    class="flex items-center gap-2 hover:text-yellow-400">
+                                View <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 3 -->
+                <div class="project-card bg-zinc-900 border border-zinc-800 rounded-3xl overflow-hidden group">
+                    <div class="h-60 bg-gradient-to-br from-pink-500/20 to-zinc-800 flex items-center justify-center">
+                        <i class="fa-solid fa-robot text-7xl text-pink-400 group-hover:rotate-6 transition-transform"></i>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex gap-2 mb-4">
+                            <span class="text-[10px] px-3 py-1 bg-pink-400/10 text-pink-400 rounded-full">Artificial Intelligence</span>
+                        </div>
+                        <h3 class="text-2xl font-semibold mb-3">UniBot - AI Campus Assistant</h3>
+                        <p class="text-zinc-400 text-sm leading-relaxed line-clamp-3">
+                            A basic rule-based chatbot that answers common University of Venda student queries using JavaScript and simple NLP patterns.
+                        </p>
+                        <div class="mt-8 flex items-center justify-between text-xs">
+                            <span class="font-mono text-yellow-400">HTML • CSS • JS</span>
+                            <button onclick="window.open('https://github.com', '_blank')" 
+                                    class="flex items-center gap-2 hover:text-yellow-400">
+                                View <i class="fa-solid fa-arrow-right text-xs"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-24 bg-zinc-900">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-5xl font-bold tracking-tighter">Let's Build Something Secure &amp; Smart Together</h2>
+                <p class="mt-4 text-zinc-400">Open to collaborations, internships, or just a friendly chat!</p>
+            </div>
+            
+            <div class="grid md:grid-cols-5 gap-12">
+                <!-- Contact Info -->
+                <div class="md:col-span-2 space-y-10">
+                    <div>
+                        <p class="text-xs uppercase text-zinc-500 mb-3">PHONE</p>
+                        <a href="tel:0774413854" class="text-3xl font-medium hover:text-yellow-400 transition-colors block">
+                            077 441 3854
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <p class="text-xs uppercase text-zinc-500 mb-3">EMAIL</p>
+                        <a href="mailto:carolineolga9@gmail.com" class="text-3xl font-medium hover:text-yellow-400 transition-colors block">
+                            carolineolga9@gmail.com
+                        </a>
+                    </div>
+                    
+                    <div>
+                        <p class="text-xs uppercase text-zinc-500 mb-3">LOCATION</p>
+                        <p class="text-2xl font-medium">Thohoyandou, Limpopo<br>South Africa</p>
+                    </div>
+                    
+                    <div class="pt-8">
+                        <p class="text-xs uppercase text-zinc-500 mb-6">CONNECT WITH ME</p>
+                        <div class="flex gap-6 text-4xl">
+                            <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-github"></i></a>
+                            <a href="#" class="hover:text-yellow-400 transition-colors"><i class="fa-brands fa-x-twitter"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Contact Form -->
+                <div class="md:col-span-3 bg-black/40 border border-zinc-700 rounded-3xl p-8">
+                    <form id="contact-form" class="space-y-8">
+                        <div class="grid grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-xs uppercase text-zinc-400 mb-2">Your Name</label>
+                                <input type="text" id="name" 
+                                       class="w-full bg-zinc-900 border border-zinc-700 focus:border-yellow-400 rounded-2xl px-6 py-5 outline-none transition-all"
+                                       placeholder="John Doe" required>
+                            </div>
+                            <div>
+                                <label class="block text-xs uppercase text-zinc-400 mb-2">Your Email</label>
+                                <input type="email" id="email" 
+                                       class="w-full bg-zinc-900 border border-zinc-700 focus:border-yellow-400 rounded-2xl px-6 py-5 outline-none transition-all"
+                                       placeholder="you@email.com" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-xs uppercase text-zinc-400 mb-2">Message</label>
+                            <textarea id="message" rows="6"
+                                      class="w-full bg-zinc-900 border border-zinc-700 focus:border-yellow-400 rounded-3xl px-6 py-5 outline-none resize-none transition-all"
+                                      placeholder="Hi Caroline, I saw your portfolio and..."></textarea>
+                        </div>
+                        
+                        <button type="submit"
+                                class="w-full py-6 bg-yellow-400 hover:bg-amber-300 transition-all text-zinc-950 font-semibold text-lg rounded-3xl flex items-center justify-center gap-3">
+                            SEND MESSAGE
+                            <i class="fa-solid fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="bg-black py-12 border-t border-zinc-800">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm">
+            <p class="text-zinc-400">
+                © 2026 Tshishonge Oluga Caroline • Made with passion in Limpopo
+            </p>
+            <p class="text-zinc-500 text-xs">
+                Built using pure HTML • Tailwind CSS • JavaScript
+            </p>
+            <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+                    class="flex items-center gap-2 text-xs hover:text-yellow-400">
+                <span>BACK TO TOP</span>
+                <i class="fa-solid fa-arrow-up"></i>
+            </button>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script already loaded via CDN
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('mobile-menu-btn');
+            
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.innerHTML = <i class="fa-solid fa-xmark"></i>;
+            } else {
+                menu.classList.add('hidden');
+                icon.innerHTML = <i class="fa-solid fa-bars"></i>;
+            }
+        }
+        
+        // Form submission handler
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            
+            if (name) {
+                alert(Thank you, ${name}! 🎉\n\nYour message has been received. Caroline will reply soon via email.);
+                this.reset();
+            } else {
+                alert("Please enter your name :)");
+            }
+        });
+        
+        // Activate skill bars on scroll
+        function animateSkillBars() {
+            const bars = document.querySelectorAll('.skill-bar');
+            bars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 300);
+            });
+        }
+        
+        // Trigger animation when skills section is visible
+        let skillsAnimated = false;
+        window.addEventListener('scroll', () => {
+            if (!skillsAnimated) {
+                const skillsSection = document.getElementById('skills');
+                const rect = skillsSection.getBoundingClientRect();
+                
+                if (rect.top <= window.innerHeight * 0.7) {
+                    animateSkillBars();
+                    skillsAnimated = true;
+                }
+            }
+        });
+        
+        // Keyboard shortcut: Press "/" to focus contact form
+        document.addEventListener('keydown', (e) => {
+            if (e.key === '/' && document.activeElement.tagName !== "INPUT" && document.activeElement.tagName !== "TEXTAREA") {
+                e.preventDefault();
+                document.getElementById('name').focus();
+            }
+        });
+        
+        // Make navbar transparent when scrolled
+        window.addEventListener('scroll', () => {
+            const nav = document.querySelector('nav');
+            if (window.scrollY > 100) {
+                nav.classList.add('shadow-2xl');
+            } else {
+                nav.classList.remove('shadow-2xl');
+            }
+        });
+        
+        // Welcome message in console
+        console.log('%c👋 Welcome to Caroline Tshishonge Oluga\'s Portfolio!\nBuilt with ❤️ for a future cybersecurity & AI leader.', 
+                    'color:#eab308; font-family:monospace; font-size:12px');
+        
+        // Make profile image clickable (fun effect)
+        const profileImg = document.querySelector('img[alt="Caroline Tshishonge Oluga"]');
+        if (profileImg) {
+            profileImg.style.cursor = 'pointer';
+            profileImg.addEventListener('click', () => {
+                profileImg.style.transform = 'scale(1.1) rotate(5deg)';
+                setTimeout(() => {
+                    profileImg.style.transform = 'scale(1) rotate(0deg)';
+                }, 300);
+            });
+        }
+    </script>
+</body>
+</html>
